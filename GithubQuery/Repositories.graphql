@@ -1,0 +1,30 @@
+query SearchRepositories($queryString: String!, $count: Int!, $afterCursor: String){
+    search(query: $queryString, type: REPOSITORY, first: $count, after: $afterCursor) {
+        repositoryCount
+        pageInfo {
+            startCursor
+            endCursor
+            hasNextPage
+        }
+        edges {
+            cursor
+            node {
+                ... on Repository {
+                    ...RepositoryDetails
+                }
+            }
+            
+        }
+    }
+}
+
+fragment RepositoryDetails on Repository {
+    name
+    owner {
+        avatarUrl
+        login
+    }
+    stargazers {
+        totalCount
+    }
+}
