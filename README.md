@@ -16,7 +16,9 @@ pod install
 
 ## Starting the app
 
-You can then open `GithubQuery.xcworkspace` and press the run button to run the app. It should load a screen where you can input a search text and should be able to see list of repositories and display their owner avatar, name, owner login name and number of votes in a table view.
+- You need to go to the [Github developer settings](https://github.com/settings/tokens), get your OAuth token with repo scope and set it to `githubToken` property of `Apollo` class.
+
+- You can then open `GithubQuery.xcworkspace` and press the run button to run the app. It should load a screen where you can input a search text and should be able to see list of repositories and display their owner avatar, name, owner login name and number of votes in a table view.
 
 This is a basic demo app to demonstrate how you can hook up GraphQL query results to your UI.
 
